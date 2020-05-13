@@ -1,14 +1,12 @@
 <template>
   <div class="footer">
     <div class="version">
-      <a href="javascript:;" style="margin-right: 20px">{{
-        GlobalCfg.siteName
-      }}</a>
-      <b>Version</b> {{ GlobalCfg.version }}
+      <a href="javascript:;" style="margin-right: 20px">{{ $Cfg.siteName }}</a>
+      <b>Version</b> {{ $Cfg.version }}
     </div>
     <strong>
-      Copyright © 2019
-      <a href="javascript:;"> {{ GlobalCfg.corporation }} </a>. </strong
+      Copyright © 2020
+      <a href="javascript:;"> {{ $Cfg.corporation }} </a>. </strong
     >All rights reserved.
   </div>
 </template>

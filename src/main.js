@@ -6,26 +6,29 @@ import "@/assets/css/style.scss";
 import router from "./router";
 import store from "./store";
 import "@/utils/v-auth.js";
-import { getToken } from "@/utils/common";
 import "./components";
+import { isLogin } from "./utils/dataStorage";
 
 Vue.config.productionTip = false;
-Vue.prototype.GlobalCfg = Config;
+Vue.prototype.$Cfg = Config;
 Vue.use(elementUi);
 
 router.beforeEach((to, from, next) => {
   window.document.title = to.meta.title
     ? to.meta.title + "-" + Config.siteName
     : Config.siteName;
-  if (!getToken() && to.path !== "/login") {
+
+  if (!isLogin() && to.path != "/login") {
     next({ path: "/login" });
   } else {
     next();
   }
 });
+router.afterEach(transition => {});
 
-new Vue({
+window.vm = new Vue({
+  el: "#app",
   router,
   store,
   render: h => h(App)
-}).$mount("#app");
+});

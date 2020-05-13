@@ -1,5 +1,5 @@
 export default {
-  version: 0.1,
+  version: "1.0",
   timeout: 60000,
   apiPrefix: "",
   requestRetry: 4,

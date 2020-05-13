@@ -1,0 +1,140 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #2f3356;
+  .login-form {
+    width: 840px;
+    height: 500px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    text-align: left;
+    border-radius: 4px;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    zoom: 1;
+    .bg-img {
+      width: 342px;
+      height: 308px;
+    }
+    .form {
+      width: 340px;
+      //height: 276px;
+      .title {
+        text-align: left;
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .login-btn {
+        height: 50px;
+        background: #ff5555;
+        font-size: 16px;
+        border: none;
+      }
+      .ins_code {
+        width: 100%;
+        display: flex;
+        height: 64px;
+        align-items: center;
+        border-bottom: 1px solid #e1e1e1;
+        input {
+          flex: 1;
+          border: none;
+        }
+        span {
+          color: #2183f4;
+          cursor: pointer;
+          &::before {
+            content: "";
+            height: 10px;
+            margin-right: 5px;
+            border-left: 1px solid #2183f4;
+            display: inline-block;
+            width: 1px;
+          }
+          &.active {
+            color: #197ff6;
+          }
+        }
+      }
+      .auth_code {
+        display: flex;
+        justify-content: space-between;
+      }
+      .code {
+        color: #9a9b9c;
+        cursor: pointer;
+      }
+      .input {
+        height: 64px;
+        font-size: 19px;
+        width: 100%;
+        display: block;
+        padding: 0 20px 0 0;
+        border-bottom: 1px solid #e1e1e1;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        background: #fff;
+      }
+      .remind {
+        color: #333;
+        font-size: 12px;
+        margin-top: 10px;
+        text-align: right;
+        span {
+          color: #0086f1;
+          cursor: pointer;
+          text-decoration: underline;
+          margin-left: 5px;
+        }
+      }
+      .verification_code {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e1e1e1;
+        margin-bottom: 20px;
+        span {
+          padding: 0 10px;
+          cursor: pointer;
+          color: #767676;
+          &.active {
+            color: #000;
+          }
+        }
+        input {
+          flex: 1;
+          border: none;
+        }
+      }
+      .eye {
+        position: relative;
+        .eye-click {
+          cursor: pointer;
+          display: block;
+          right: 0;
+          top: 25px;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+        }
+      }
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+      }
+
+      input:-webkit-autofill {
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+  }
+}

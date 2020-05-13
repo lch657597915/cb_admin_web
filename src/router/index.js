@@ -1,31 +1,22 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
-import Layout from "@/views/layout/App.vue";
-import ArticleManage from "./articleManage";
+import Router from "vue-router";
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-const routes = [
+import Layout from "../views/layout/App.vue";
+import Personal from "./personal";
+import userManage from "./userManage";
+import Common from "./common.js";
+
+let RouteList = [
   {
     path: "/",
     component: Layout,
-    name: "Dashboard",
-    redirect: "/home",
-    meta: {
-      title: "仪表盘"
-    },
-    children: [
-      {
-        path: "home",
-        name: "DashboardHome",
-        meta: {
-          title: "首页"
-        },
-        component: resolve => require(["@/views/home/Index.vue"], resolve)
-      }
-    ]
+    children: [...Common, Personal]
   },
-  ArticleManage,
+
+  userManage,
+
   {
     path: "/login",
     name: "Login",
@@ -39,13 +30,6 @@ const routes = [
   }
 ];
 
-const originalPush = VueRouter.prototype.push;
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err);
-};
-
-const router = new VueRouter({
-  routes
+export default new Router({
+  routes: RouteList
 });
-
-export default router;
